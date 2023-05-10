@@ -186,6 +186,10 @@ void Block::wheelEvent(QGraphicsSceneWheelEvent *p_Event) {
   if (nIndex >= 0) {
     switch (nIndex) {
       case 1:
+        if (m_bActive){
+          this->rotateBlock();
+          break;
+          }
         this->rotateBlock(p_Event->delta());
         update();
         break;
